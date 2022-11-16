@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 4950661725203207025}
   - component: {fileID: 4950661725203207026}
   - component: {fileID: 4950661725203207027}
-  - component: {fileID: 4950661725203207028}
+  - component: {fileID: 8492351393292021753}
   - component: {fileID: 4950661725203207029}
   m_Layer: 0
   m_Name: Player
@@ -328,7 +328,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4950661725203207028
+--- !u!114 &8492351393292021753
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
