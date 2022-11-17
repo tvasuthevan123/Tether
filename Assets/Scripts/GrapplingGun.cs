@@ -28,8 +28,7 @@ public class GrapplingGun : MonoBehaviour
     {
         if(IsGrappling() && isReeling)
         {
-            Debug.Log("Grapple Point " + grapplePoint);
-            Debug.Log("Player Position" + player.transform.position);
+            Debug.Log("Reelings?");
             Vector3 direction = (grapplePoint - player.transform.position).normalized;
             playerRb.AddForce(direction * reelAccel);
         }
@@ -70,24 +69,30 @@ public class GrapplingGun : MonoBehaviour
         if (Physics.Raycast(camera.position, camera.forward, out hit, maxDistance, whatIsGrappleable))
         {
             grapplePoint = hit.point;
-            // joint = player.gameObject.AddComponent<SpringJoint>();
-            // joint.autoConfigureConnectedAnchor = false;
-            // joint.connectedAnchor = grapplePoint;
-
-            float distanceFromPoint = Vector3.Distance(player.transform.position, grapplePoint);
-
-            //The distance grapple will try to keep from grapple point. 
-            // joint.maxDistance = distanceFromPoint * 0.8f;
-            // joint.minDistance = distanceFromPoint * 0.25f;
-
-            //Adjust these values to fit your game.
-            // joint.spring = 4.5f;
-            // joint.damper = 7f;
-            // joint.massScale = 4.5f;
-
             lr.positionCount = 2;
             currentGrapplePosition = gunTip.position;
+
+            // if(!isReeling)
+            //     setFixedGrapple();
         }
+    }
+
+    void setFixedGrapple()
+    {
+        joint = player.gameObject.AddComponent<SpringJoint>();
+        joint.autoConfigureConnectedAnchor = false;
+        joint.connectedAnchor = grapplePoint;
+
+        float distanceFromPoint = Vector3.Distance(player.transform.position, grapplePoint);
+
+        //The distance grapple will try to keep from grapple point. 
+        joint.maxDistance = distanceFromPoint * 0.8f;
+        joint.minDistance = distanceFromPoint * 0.25f;
+
+        // Adjust these values to fit your game.
+        joint.spring = 4.5f;
+        joint.damper = 0f;
+        joint.massScale = 4.5f;
     }
 
     /// <summary>
@@ -102,17 +107,20 @@ public class GrapplingGun : MonoBehaviour
     void StartReel()
     {
         isReeling=true;
+        Destroy(joint);
     }
 
     void StopReel()
     {
         isReeling=false;
+        // if(IsGrappling())
+        //     setFixedGrapple();
     }
 
     void DrawRope()
     {
         //If not grappling, don't draw rope
-        if (grapplePoint == null) return;
+        if (!IsGrappling()) return;
 
         currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, grapplePoint, Time.deltaTime * 8f);
 
