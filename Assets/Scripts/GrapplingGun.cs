@@ -22,6 +22,7 @@ public class GrapplingGun : MonoBehaviour
     {
         lr = GetComponent<LineRenderer>();
         playerRb = player.GetComponent<Rigidbody>();
+        StopGrapple();
     }
 
     void Update()
