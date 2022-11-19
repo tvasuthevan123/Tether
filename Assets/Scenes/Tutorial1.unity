@@ -2013,6 +2013,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 457629355692443332, guid: 7955a82e3ddc4e148bff5d49b7174504,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1304869506388200963, guid: 7955a82e3ddc4e148bff5d49b7174504,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2021,7 +2026,7 @@ PrefabInstance:
     - target: {fileID: 3976288043317014588, guid: 7955a82e3ddc4e148bff5d49b7174504,
         type: 3}
       propertyPath: m_Name
-      value: EnemyContainer
+      value: DetectionContainer
       objectReference: {fileID: 0}
     - target: {fileID: 3976288043317014589, guid: 7955a82e3ddc4e148bff5d49b7174504,
         type: 3}
@@ -2113,7 +2118,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4589b87b8508f6e48b8fddb385924b16, type: 2}
+  - {fileID: 2100000, guid: 96a3f5f200d1f7240a9773282945af6d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
