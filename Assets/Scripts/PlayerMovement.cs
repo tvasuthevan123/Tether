@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     //Assingables
     public Transform playerCam;
     public Transform orientation;
+    public Transform respawnPoint;
 
     //Other
     private Rigidbody rb;
@@ -291,6 +292,17 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Finish")) 
+        {
+            //END LEVEL SEQUENCE
+        }
+        if (other.gameObject.CompareTag("Respawn"))
+        {
+            transform.position = respawnPoint.position;
+        }
+    }
     private void StopGrounded()
     {
         grounded = false;
