@@ -236,6 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCam: {fileID: 193858775333495264}
   orientation: {fileID: 193858775442509316}
+  respawnPoint: {fileID: 0}
   moveSpeed: 4500
   maxSpeed: 20
   grounded: 0
@@ -570,7 +571,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5629084884208175553, guid: fce3bf5a5b603db45ab0048fb6ab44df, type: 3}
+  - {fileID: 2100000, guid: 4589b87b8508f6e48b8fddb385924b16, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
