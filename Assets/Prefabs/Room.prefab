@@ -702,6 +702,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: KillBox
       objectReference: {fileID: 0}
+    - target: {fileID: 8655872025474208367, guid: 18b1ba1420d79154da2048db9edeec25,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 99a7dacedaeddec42909b76c5650782e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18b1ba1420d79154da2048db9edeec25, type: 3}
 --- !u!4 &5937448109406812877 stripped
