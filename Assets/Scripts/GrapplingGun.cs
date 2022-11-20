@@ -73,8 +73,8 @@ public class GrapplingGun : MonoBehaviour
             lr.positionCount = 2;
             currentGrapplePosition = gunTip.position;
 
-            // if(!isReeling)
-            //     setFixedGrapple();
+            if(!isReeling)
+                setFixedGrapple();
         }
     }
 
