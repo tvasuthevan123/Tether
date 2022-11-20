@@ -443,6 +443,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1674683765}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &646360127 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6406959417860803336, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+    type: 3}
+  m_PrefabInstance: {fileID: 1686356913}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &679321389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2017,6 +2023,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 193858774927543330, guid: 69fa5bb665b1b6a46a1ac73211734c68,
         type: 3}
+      propertyPath: crosshair
+      value: 
+      objectReference: {fileID: 646360127}
+    - target: {fileID: 193858774927543330, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
       propertyPath: maxDistance
       value: 100
       objectReference: {fileID: 0}
@@ -2120,6 +2131,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3404941368739226767, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: m_Name
+      value: CrosshairTipS
+      objectReference: {fileID: 0}
     - target: {fileID: 3737448405620516418, guid: 69fa5bb665b1b6a46a1ac73211734c68,
         type: 3}
       propertyPath: respawnPoint
@@ -2129,6 +2145,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerContainer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515194749651840821, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: m_Name
+      value: CrosshairTipE
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766419837150410893, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: m_Name
+      value: CrosshairTipW
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162979672507889459, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: m_Name
+      value: CrosshairTipN
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162979672507889459, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7732486250020698547, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7732486250020698547, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7732486250020698547, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8277729587674679819, guid: 69fa5bb665b1b6a46a1ac73211734c68,
         type: 3}

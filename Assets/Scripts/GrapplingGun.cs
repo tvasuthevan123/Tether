@@ -1,37 +1,71 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GrapplingGun : MonoBehaviour
 {
+    public LayerMask whatIsGrappleable;
+    public Transform gunTip, camera, crosshair;
+    public float maxDistance = 100f;
+    public float reelAccel = 5f;
+    public GameObject player;
+    private Rigidbody playerRb;
 
+
+    private bool canGrapple;
+    private bool isReeling = false; 
+    private SpringJoint joint;
+    private Vector3 currentGrapplePosition;
     private LineRenderer lr;
     private Vector3 grapplePoint;
-    public LayerMask whatIsGrappleable;
-    public Transform gunTip, camera;
-    public float maxDistance = 100f;
-    
-    private SpringJoint joint;
-    public float reelAccel = 5f;
-    private bool isReeling = false; 
+    private RaycastHit hit;
+    private List<GameObject> crosshairTips;
 
-    private Vector3 currentGrapplePosition;
-
-    public GameObject player;
-    public Rigidbody playerRb;
+    private enum crosshairState
+    {
+        cannotGrapple,
+        canGrapple,
+        isGrappling,
+        isReeling
+    }
 
     void Awake()
     {
         lr = GetComponent<LineRenderer>();
         playerRb = player.GetComponent<Rigidbody>();
         StopGrapple();
+
+        crosshairTips = new List<GameObject>();
+        foreach(Transform crosshairTipTransform in crosshair)
+        {
+            crosshairTips.Add(crosshairTipTransform.gameObject);
+        }
     }
 
     void Update()
     {
+        bool canGrappleCheck = Physics.Raycast(camera.position, camera.forward, out hit, maxDistance, whatIsGrappleable);
+        if(canGrappleCheck && !IsGrappling())
+        {
+            canGrapple = true;
+            SetCrosshair(crosshairState.canGrapple);
+        }
+        else if(!canGrappleCheck && !IsGrappling())
+        {
+            canGrapple = false;
+            SetCrosshair(crosshairState.cannotGrapple);
+        }
+        else if(IsGrappling())
+        {
+            SetCrosshair(crosshairState.isGrappling);
+        }
+
+
         if(IsGrappling() && isReeling)
         {
-            Debug.Log("Reelings?");
             Vector3 direction = (grapplePoint - player.transform.position).normalized;
             playerRb.AddForce(direction * reelAccel);
+            SetCrosshair(crosshairState.isReeling);
         }
         // TODO: Possible refactor using input system onPress?
         // Grapple
@@ -55,10 +89,33 @@ public class GrapplingGun : MonoBehaviour
         }
     }
 
-    //Called after Update
     void LateUpdate()
     {
         DrawRope();
+    }
+
+    void SetCrosshair(crosshairState state)
+    {
+        Color crosshairColor = new Color(0,0,0);
+        switch(state)
+        {
+            case crosshairState.cannotGrapple:
+                crosshairColor = new Color(255,0,0);
+                break;
+            case crosshairState.canGrapple:
+                crosshairColor = new Color(0,255,0);
+                break;
+            case crosshairState.isGrappling:
+                crosshairColor = new Color(0,255,241);
+                break;
+            case crosshairState.isReeling:
+                crosshairColor = new Color(255,132,0);
+                break;
+        }
+        foreach(GameObject crosshairTip in crosshairTips)
+        {
+            crosshairTip.GetComponent<Image>().color = crosshairColor;
+        }
     }
 
     /// <summary>
@@ -66,35 +123,37 @@ public class GrapplingGun : MonoBehaviour
     /// </summary>
     void StartGrapple()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(camera.position, camera.forward, out hit, maxDistance, whatIsGrappleable))
+        if (canGrapple)
         {
             grapplePoint = hit.point;
             lr.positionCount = 2;
             currentGrapplePosition = gunTip.position;
-
-            if(!isReeling)
-                setFixedGrapple();
+            SetCrosshair(crosshairState.isGrappling);
+            // if(!isReeling)
+            //     setFixedGrapple();
+        }
+        else {
+            //TODO Flash for no grapple
         }
     }
 
-    void setFixedGrapple()
-    {
-        joint = player.gameObject.AddComponent<SpringJoint>();
-        joint.autoConfigureConnectedAnchor = false;
-        joint.connectedAnchor = grapplePoint;
+    // void setFixedGrapple()
+    // {
+    //     joint = player.gameObject.AddComponent<SpringJoint>();
+    //     joint.autoConfigureConnectedAnchor = false;
+    //     joint.connectedAnchor = grapplePoint;
 
-        float distanceFromPoint = Vector3.Distance(player.transform.position, grapplePoint);
+    //     float distanceFromPoint = Vector3.Distance(player.transform.position, grapplePoint);
 
-        //The distance grapple will try to keep from grapple point. 
-        joint.maxDistance = distanceFromPoint * 0.8f;
-        joint.minDistance = distanceFromPoint * 0.25f;
+    //     //The distance grapple will try to keep from grapple point. 
+    //     joint.maxDistance = distanceFromPoint * 0.8f;
+    //     joint.minDistance = distanceFromPoint * 0.25f;
 
-        // Adjust these values to fit your game.
-        joint.spring = 4.5f;
-        joint.damper = 0f;
-        joint.massScale = 4.5f;
-    }
+    //     // Adjust these values to fit your game.
+    //     joint.spring = 4.5f;
+    //     joint.damper = 0f;
+    //     joint.massScale = 4.5f;
+    // }
 
     /// <summary>
     /// Call whenever we want to stop a grapple
