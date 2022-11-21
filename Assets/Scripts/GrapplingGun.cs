@@ -45,6 +45,8 @@ public class GrapplingGun : MonoBehaviour
 
     void Update()
     {
+        if(PauseMenu.isGamePaused)
+            return;
         bool canGrappleCheck = Physics.Raycast(camera.position, camera.forward, out hit, maxDistance, whatIsGrappleable);
         if(canGrappleCheck && !IsGrappling())
         {
@@ -87,10 +89,8 @@ public class GrapplingGun : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             StartGrapple();
-            
-
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (!Input.GetMouseButton(0))
         {
             StopGrapple();
         }
@@ -104,7 +104,7 @@ public class GrapplingGun : MonoBehaviour
             }
             
         }
-        else if(Input.GetMouseButtonUp(1))
+        else if(!Input.GetMouseButton(1))
         {
             StopReel();
         }

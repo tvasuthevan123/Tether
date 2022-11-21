@@ -1,5 +1,3 @@
-
-
 using System;
 using UnityEngine;
 
@@ -68,6 +66,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(PauseMenu.isGamePaused)
+            return;
         Movement();
     }
 
@@ -304,12 +304,14 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Finish")) 
         {
             finishLevel.Play();
+            
             //END LEVEL SEQUENCE
             // Level Complete Overlay
         }
         if (other.gameObject.CompareTag("Respawn"))
         {
             respawn.Play();
+            // Death Flash Overlay
             transform.position = respawnPoint.position;
             playerCam.transform.rotation = respawnPoint.rotation;
             orientation.transform.rotation = respawnPoint.rotation;
