@@ -1437,7 +1437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b6c60b45951d454ab2155803082cb90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grappling: {fileID: 0}
+  grappling: {fileID: 4480159138405865081}
 --- !u!1 &4364428235145537949
 GameObject:
   m_ObjectHideFlags: 0
