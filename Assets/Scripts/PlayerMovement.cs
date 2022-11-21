@@ -306,6 +306,7 @@ public class PlayerMovement : MonoBehaviour
         if  (other.gameObject.CompareTag("Rewind"))
         {
             //TIME REDUCTION HERE
+            Destroy(other.gameObject);
         }
     }
     private void StopGrounded()
