@@ -6,7 +6,7 @@ public class Timer : MonoBehaviour
 {
     public TMP_Text timeValue;
     public TMP_Text timeLabel;
-    private float timeElapsed;
+    public float timeElapsed;
 
     void Awake()
     {

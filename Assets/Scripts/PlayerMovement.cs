@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -50,6 +51,9 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource respawn;
     public AudioSource finishLevel;
     public Timer timer;
+    public SceneFader sceneFader;
+    public String levelName;
+    public String nextLevel;
 
     void Awake()
     {
@@ -306,7 +310,10 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Finish")) 
         {
             finishLevel.Play();
-            
+            LevelComplete.levelName = levelName;
+            LevelComplete.nextLevel = nextLevel;
+            LevelComplete.timeTaken = timer.timeElapsed;
+            sceneFader.FadeTo("LevelComplete");
             //END LEVEL SEQUENCE
             // Level Complete Overlay
         }

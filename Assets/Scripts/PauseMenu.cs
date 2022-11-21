@@ -23,24 +23,24 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
+        isGamePaused = true;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
         pauseMenuUI.SetActive(true);
         playerUI.SetActive(false);
         Time.timeScale = 0f;
-        isGamePaused = true;
         Debug.Log("Paused");
     }
     
     public void Resume()
     {
+        isGamePaused = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Debug.Log("Resuming?");
         pauseMenuUI.SetActive(false);
         playerUI.SetActive(true);
         Time.timeScale=1f;
-        isGamePaused = false;
     }
 
     public void LoadLevelSelect()
