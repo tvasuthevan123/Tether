@@ -58,15 +58,14 @@ public class GrapplingGun : MonoBehaviour
             SetCrosshair(crosshairState.isGrappling);
         }
 
-        if(!IsGrappling() && !isReeling)
+        if(!isReeling)
         {
-            playerRb.drag = 0;
-            playerRb.AddForce(Vector3.down * reelAccel);
+            playerRb.AddForce(Vector3.down * reelAccel);    
         }
         if(IsGrappling() && isReeling)
         {
             Vector3 direction = (grapplePoint - player.transform.position).normalized;
-            playerRb.AddForce(direction * reelAccel);
+            playerRb.AddForce(direction * reelAccel * 2);
             SetCrosshair(crosshairState.isReeling);
         }
         // TODO: Possible refactor using input system onPress?
@@ -83,7 +82,11 @@ public class GrapplingGun : MonoBehaviour
         // Reel button interaction
         if (Input.GetMouseButtonDown(1))
         {
-            StartReel();
+            if(IsGrappling())
+            {
+                StartReel();
+            }
+            
         }
         else if(Input.GetMouseButtonUp(1))
         {
@@ -131,7 +134,6 @@ public class GrapplingGun : MonoBehaviour
             lr.positionCount = 2;
             currentGrapplePosition = gunTip.position;
             SetCrosshair(crosshairState.isGrappling);
-            playerRb.drag = 0.25f;
             // if(!isReeling)
             //     setFixedGrapple();
         }
@@ -165,7 +167,6 @@ public class GrapplingGun : MonoBehaviour
     {
         lr.positionCount = 0;
         Destroy(joint);
-        playerRb.drag = 0.5f;
         
     }
 
