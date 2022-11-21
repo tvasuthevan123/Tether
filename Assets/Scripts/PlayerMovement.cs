@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -73,9 +72,7 @@ public class PlayerMovement : MonoBehaviour
         Look();
     }
 
-    /// <summary>
-    /// Find user input. Should put this in its own class but im lazy
-    /// </summary>
+
     private void MyInput()
     {
         x = Input.GetAxisRaw("Horizontal");
@@ -116,11 +113,7 @@ public class PlayerMovement : MonoBehaviour
         orientation.transform.localRotation = Quaternion.Euler(0, desiredX, 0);
     }
 
-    /// <summary>
-    /// Find the velocity relative to where the player is looking
-    /// Useful for vectors calculations regarding movement and limiting movement
-    /// </summary>
-    /// <returns></returns>
+ 
     public Vector2 FindVelRelativeToLook()
     {
         float lookAngle = orientation.transform.eulerAngles.y;
