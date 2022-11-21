@@ -10,8 +10,6 @@ public class GrapplingGun : MonoBehaviour
     public float reelAccel = 5f;
     public GameObject player;
     private Rigidbody playerRb;
-
-    private float distanceFromPoint;
     private bool canGrapple;
     private bool isReeling = false; 
     private SpringJoint joint;
@@ -58,7 +56,6 @@ public class GrapplingGun : MonoBehaviour
         else if(IsGrappling())
         {
             SetCrosshair(crosshairState.isGrappling);
-            distanceFromPoint = Vector3.Distance(player.transform.position, grapplePoint);
         }
 
 
@@ -132,7 +129,7 @@ public class GrapplingGun : MonoBehaviour
             SetCrosshair(crosshairState.isGrappling);
             playerRb.drag = 0.25f;
             // if(!isReeling)
-            //     // setFixedGrapple();
+            //     setFixedGrapple();
         }
         else {
             //TODO Flash for no grapple
@@ -145,7 +142,7 @@ public class GrapplingGun : MonoBehaviour
         joint.autoConfigureConnectedAnchor = false;
         joint.connectedAnchor = grapplePoint;
 
-        distanceFromPoint = Vector3.Distance(player.transform.position, grapplePoint);
+        float distanceFromPoint = Vector3.Distance(player.transform.position, grapplePoint);
 
         //The distance grapple will try to keep from grapple point. 
         joint.maxDistance = distanceFromPoint * 0.9f ;
@@ -178,8 +175,8 @@ public class GrapplingGun : MonoBehaviour
     void StopReel()
     {
         isReeling=false;
-        if(IsGrappling())
-            setFixedGrapple();
+        // if(IsGrappling())
+        //     setFixedGrapple();
         playerRb.mass = 20; 
     }
 

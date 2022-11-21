@@ -668,8 +668,8 @@ MonoBehaviour:
   gunTip: {fileID: 193858774029803866}
   camera: {fileID: 193858773475449847}
   crosshair: {fileID: 6406959417860803336}
-  maxDistance: 10
-  reelAccel: 5
+  maxDistance: 750
+  reelAccel: 150
   player: {fileID: 193858773758417613}
 --- !u!1 &193858775333495271
 GameObject:
