@@ -353,7 +353,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   gunTip: {fileID: 7550542148701149535}
-  camera: {fileID: 8581854761319686485}
+  cameraobject: {fileID: 835622019123217063}
   crosshair: {fileID: 3366412290498766710}
   maxDistance: 750
   reelAccel: 150
@@ -1092,7 +1092,6 @@ GameObject:
   - component: {fileID: 5790594560043889994}
   - component: {fileID: 6482440863862542591}
   - component: {fileID: 8860496016993232863}
-  - component: {fileID: 5851437760694308437}
   - component: {fileID: 6032277215368886876}
   - component: {fileID: 3613312642453303235}
   - component: {fileID: 2821738497397880533}
@@ -1173,20 +1172,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5851437760694308437
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219817123871128882}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6032277215368886876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1202,21 +1187,12 @@ MonoBehaviour:
   playerCam: {fileID: 835622019123217063}
   orientation: {fileID: 941357671250616115}
   respawnPoint: {fileID: 0}
-  moveSpeed: 4500
-  maxSpeed: 20
-  grounded: 0
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 512
-  counterMovement: 0.175
   maxSlopeAngle: 35
-  slideForce: 400
-  slideCounterMovement: 0.2
-  jumpForce: 550
   pickupSound: {fileID: 4286478916347158183}
   respawn: {fileID: 8151190413089460182}
   finishLevel: {fileID: 597840341717362466}
   timer: {fileID: 8068088520070733225}
+  grappleGun: {fileID: 0}
 --- !u!54 &3613312642453303235
 Rigidbody:
   m_ObjectHideFlags: 0

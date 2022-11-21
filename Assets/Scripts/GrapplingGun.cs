@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class GrapplingGun : MonoBehaviour
 {
     public LayerMask whatIsGrappleable;
-    public Transform gunTip, camera, crosshair;
+    public Transform gunTip, cameraobject, crosshair;
     public float maxDistance = 100f;
     public float reelAccel = 5f;
     public GameObject player;
@@ -47,7 +47,7 @@ public class GrapplingGun : MonoBehaviour
     {
         if(PauseMenu.isGamePaused)
             return;
-        bool canGrappleCheck = Physics.Raycast(camera.position, camera.forward, out hit, maxDistance, whatIsGrappleable);
+        bool canGrappleCheck = Physics.Raycast(cameraobject.position, cameraobject.forward, out hit, maxDistance, whatIsGrappleable);
         if(canGrappleCheck && !IsGrappling())
         {
             canGrapple = true;
@@ -180,7 +180,7 @@ public class GrapplingGun : MonoBehaviour
     /// <summary>
     /// Call whenever we want to stop a grapple
     /// </summary>
-    void StopGrapple()
+    public void StopGrapple()
     {
         lr.positionCount = 0;
         Destroy(joint);
@@ -194,7 +194,7 @@ public class GrapplingGun : MonoBehaviour
         playerRb.mass = 10;
     }
 
-    void StopReel()
+    public void StopReel()
     {
         isReeling=false;
         // if(IsGrappling())
