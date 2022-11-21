@@ -51,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource pickupSound;
     public AudioSource respawn;
     public AudioSource finishLevel;
+    public Timer timer;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -301,17 +303,20 @@ public class PlayerMovement : MonoBehaviour
         {
             finishLevel.Play();
             //END LEVEL SEQUENCE
+            // Level Complete Overlay
         }
         if (other.gameObject.CompareTag("Respawn"))
         {
             respawn.Play();
             transform.position = respawnPoint.position;
+            playerCam.rotation = respawnPoint.rotation;
             rb.velocity = new Vector3(0,0,0);
         }
         if  (other.gameObject.CompareTag("Rewind"))
         {
             //TIME REDUCTION HERE
             pickupSound.Play();
+            timer.ReduceTime(5f);
             Destroy(other.gameObject);
         }
     }

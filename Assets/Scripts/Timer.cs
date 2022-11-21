@@ -1,17 +1,16 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    private TMP_Text timeText;
+    public TMP_Text timeValue;
+    public TMP_Text timeLabel;
     private float timeElapsed;
 
     void Awake()
     {
         timeElapsed = 0f;
-        timeText = GetComponent<TMP_Text>();
     }
 
     void Update()
@@ -25,6 +24,30 @@ public class Timer : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay/60);
         float seconds = Mathf.FloorToInt(timeToDisplay%60);
         float milliseconds = timeToDisplay % 1 * 1000;
-        timeText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
+        timeValue.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
+    }
+
+    public void ReduceTime(float timeToReduce)
+    {
+        if(timeToReduce < timeElapsed)
+            timeElapsed-=timeToReduce;
+        else
+            timeElapsed=0f;
+        timeLabel.color = Color.green;
+        timeValue.color = Color.green;
+        StartCoroutine(PickUpFade());
+    }
+
+    IEnumerator PickUpFade()
+    {
+        float time = 0f;
+        while(time < 1)
+        {
+            time+=Time.deltaTime;
+            
+            timeLabel.color = Color.Lerp(Color.green, Color.white, time);
+            timeValue.color = Color.Lerp(Color.green, Color.white, time);
+            yield return 0;
+        }
     }
 }
