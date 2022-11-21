@@ -7588,7 +7588,7 @@ PrefabInstance:
     - target: {fileID: 5061882294645974781, guid: 3846a3fcbd1dd5e4681736a263d95852,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5061882294645974781, guid: 3846a3fcbd1dd5e4681736a263d95852,
         type: 3}
@@ -7951,6 +7951,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6032277215368886876, guid: 69fa5bb665b1b6a46a1ac73211734c68,
         type: 3}
+      propertyPath: levelName
+      value: Tutorial4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032277215368886876, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: nextLevel
+      value: Tutorial5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032277215368886876, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: sceneFader
+      value: 
+      objectReference: {fileID: 962224919}
+    - target: {fileID: 6032277215368886876, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 1674407102}
@@ -7959,6 +7974,11 @@ PrefabInstance:
       propertyPath: sceneFader
       value: 
       objectReference: {fileID: 962224919}
+    - target: {fileID: 8355747267850919140, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69fa5bb665b1b6a46a1ac73211734c68, type: 3}
 --- !u!1001 &1565355311

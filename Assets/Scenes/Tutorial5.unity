@@ -401,9 +401,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6032277215368886876, guid: 69fa5bb665b1b6a46a1ac73211734c68,
         type: 3}
+      propertyPath: levelName
+      value: Tutorial5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032277215368886876, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: nextLevel
+      value: LevelSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6032277215368886876, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
       propertyPath: grappleGun
       value: 
       objectReference: {fileID: 1522760783}
+    - target: {fileID: 6032277215368886876, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: sceneFader
+      value: 
+      objectReference: {fileID: 1243102394}
     - target: {fileID: 6032277215368886876, guid: 69fa5bb665b1b6a46a1ac73211734c68,
         type: 3}
       propertyPath: respawnPoint
@@ -417,7 +432,7 @@ PrefabInstance:
     - target: {fileID: 8355747267850919140, guid: 69fa5bb665b1b6a46a1ac73211734c68,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8355747267850919140, guid: 69fa5bb665b1b6a46a1ac73211734c68,
         type: 3}
@@ -580,7 +595,7 @@ PrefabInstance:
     - target: {fileID: 3592733172265564397, guid: 0fa089d7bfdb7df47967b6420db28522,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3592733172265564397, guid: 0fa089d7bfdb7df47967b6420db28522,
         type: 3}

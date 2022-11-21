@@ -7,12 +7,13 @@ public class LevelComplete : MonoBehaviour
 {
     public Material redGemMat;
     public static float timeTaken;
-    public TMP_Text timeDisplay, oneGemTime, twoGemTime, threeGemTime;
+    public TMP_Text timeDisplay;
+    public TMP_Text[] gemTimes;
     public static string levelName;
     public static string nextLevel;
     public SceneFader sceneFader;
 
-    public GameObject gem1, gem2, gem3;
+    public GameObject[] gems;
 
     private static Dictionary<string, float[]> levelTimes = new Dictionary<string, float[]>{
         ["Tutorial1"] = new[] {100f,100f,100f},
@@ -24,9 +25,10 @@ public class LevelComplete : MonoBehaviour
 
     void Start()
     {
-        oneGemTime.text = getTimeFromFloat(levelTimes[levelName][0]);
-        twoGemTime.text = getTimeFromFloat(levelTimes[levelName][1]);
-        threeGemTime.text = getTimeFromFloat(levelTimes[levelName][2]);
+        for(int i=0; i<=2; i++)
+        {
+            gemTimes[i].text = getTimeFromFloat(levelTimes[levelName][0]);
+        }
         StartCoroutine(FillGems(timeTaken));
         StartCoroutine(DisplayTime(timeTaken));
     }
@@ -34,34 +36,27 @@ public class LevelComplete : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gem1.transform.Rotate(new Vector3(0,0,70) * Time.deltaTime);
-        gem2.transform.Rotate(new Vector3(0,0,70) * Time.deltaTime);
-        gem3.transform.Rotate(new Vector3(0,0,70) * Time.deltaTime);
+        foreach(GameObject gem in gems)
+        {
+            gem.transform.Rotate(new Vector3(0,0,70) * Time.deltaTime);
+        }
     }
 
     IEnumerator FillGems(float timeTaken)
     {
         float[] times = levelTimes[levelName];
         Material[] mats = {redGemMat};
-        if(timeTaken<times[2])
+        for(int i=0; i<=2; i++)
         {
-            gem1.GetComponent<MeshRenderer>().materials = mats;
-            yield return new WaitForSeconds(0.5f);
-            gem2.GetComponent<MeshRenderer>().materials = mats;
-            yield return new WaitForSeconds(0.5f);
-            gem3.GetComponent<MeshRenderer>().materials = mats;
-        }
-        else if(timeTaken<times[1])
-        {
-            gem1.GetComponent<MeshRenderer>().materials = mats;
-            yield return new WaitForSeconds(0.5f);
-            gem2.GetComponent<MeshRenderer>().materials = mats;
-        }
-        if(timeTaken<times[0])
-        {
-            gem1.GetComponent<MeshRenderer>().materials = mats;
-            yield return new WaitForSeconds(0.5f);
-            gem2.GetComponent<MeshRenderer>().materials = mats;
+            if(timeTaken<times[i])
+            {
+                gems[i].GetComponent<MeshRenderer>().materials = mats;
+                yield return new WaitForSeconds(0.5f);
+            }
+            else
+            {
+                break;
+            }
         }
     }
 
