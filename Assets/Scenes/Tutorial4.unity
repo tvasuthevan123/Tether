@@ -651,7 +651,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-390830
+  m_Name: pb_Mesh-786458
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7879,6 +7879,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2605436665311542678, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: sceneFader
+      value: 
+      objectReference: {fileID: 962224919}
     - target: {fileID: 2763580772268996762, guid: 69fa5bb665b1b6a46a1ac73211734c68,
         type: 3}
       propertyPath: m_RootOrder
@@ -7944,6 +7949,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 6032277215368886876, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: respawnPoint
+      value: 
+      objectReference: {fileID: 1674407102}
     - target: {fileID: 7144702500774355463, guid: 69fa5bb665b1b6a46a1ac73211734c68,
         type: 3}
       propertyPath: sceneFader

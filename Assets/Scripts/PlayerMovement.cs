@@ -61,6 +61,8 @@ public class PlayerMovement : MonoBehaviour
         playerScale = transform.localScale;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        playerCam.transform.rotation = respawnPoint.rotation;
+        orientation.transform.rotation = respawnPoint.rotation;
     }
 
 
