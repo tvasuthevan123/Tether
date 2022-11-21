@@ -11,7 +11,7 @@ public class GrapplingGun : MonoBehaviour
     public GameObject player;
     private Rigidbody playerRb;
 
-
+    private float distanceFromPoint;
     private bool canGrapple;
     private bool isReeling = false; 
     private SpringJoint joint;
@@ -58,6 +58,7 @@ public class GrapplingGun : MonoBehaviour
         else if(IsGrappling())
         {
             SetCrosshair(crosshairState.isGrappling);
+            distanceFromPoint = Vector3.Distance(player.transform.position, grapplePoint);
         }
 
 
@@ -129,31 +130,32 @@ public class GrapplingGun : MonoBehaviour
             lr.positionCount = 2;
             currentGrapplePosition = gunTip.position;
             SetCrosshair(crosshairState.isGrappling);
+            playerRb.drag = 0.25f;
             // if(!isReeling)
-            //     setFixedGrapple();
+            //     // setFixedGrapple();
         }
         else {
             //TODO Flash for no grapple
         }
     }
 
-    // void setFixedGrapple()
-    // {
-    //     joint = player.gameObject.AddComponent<SpringJoint>();
-    //     joint.autoConfigureConnectedAnchor = false;
-    //     joint.connectedAnchor = grapplePoint;
+    void setFixedGrapple()
+    {
+        joint = player.gameObject.AddComponent<SpringJoint>();
+        joint.autoConfigureConnectedAnchor = false;
+        joint.connectedAnchor = grapplePoint;
 
-    //     float distanceFromPoint = Vector3.Distance(player.transform.position, grapplePoint);
+        distanceFromPoint = Vector3.Distance(player.transform.position, grapplePoint);
 
-    //     //The distance grapple will try to keep from grapple point. 
-    //     joint.maxDistance = distanceFromPoint * 0.8f;
-    //     joint.minDistance = distanceFromPoint * 0.25f;
+        //The distance grapple will try to keep from grapple point. 
+        joint.maxDistance = distanceFromPoint * 0.9f ;
+        // joint.minDistance = distanceFromPoint ;
 
-    //     // Adjust these values to fit your game.
-    //     joint.spring = 4.5f;
-    //     joint.damper = 0f;
-    //     joint.massScale = 4.5f;
-    // }
+        // Adjust these values to fit your game.
+        joint.spring = 20f;
+        joint.damper = 1f;
+        joint.massScale = 45f;
+    }
 
     /// <summary>
     /// Call whenever we want to stop a grapple
@@ -162,19 +164,23 @@ public class GrapplingGun : MonoBehaviour
     {
         lr.positionCount = 0;
         Destroy(joint);
+        playerRb.drag = 0.5f;
+        
     }
 
     void StartReel()
     {
         isReeling=true;
         Destroy(joint);
+        playerRb.mass = 10;
     }
 
     void StopReel()
     {
         isReeling=false;
-        // if(IsGrappling())
-        //     setFixedGrapple();
+        if(IsGrappling())
+            setFixedGrapple();
+        playerRb.mass = 20; 
     }
 
     void DrawRope()

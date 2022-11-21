@@ -301,6 +301,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Respawn"))
         {
             transform.position = respawnPoint.position;
+            rb.velocity = new Vector3(0,0,0);
         }
     }
     private void StopGrounded()
