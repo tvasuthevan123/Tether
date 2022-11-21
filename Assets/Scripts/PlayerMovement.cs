@@ -73,6 +73,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if(PauseMenu.isGamePaused)
+            return;
         MyInput();
         Look();
     }
