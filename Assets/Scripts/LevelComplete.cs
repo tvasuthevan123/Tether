@@ -15,7 +15,11 @@ public class LevelComplete : MonoBehaviour
     public GameObject gem1, gem2, gem3;
 
     private static Dictionary<string, float[]> levelTimes = new Dictionary<string, float[]>{
-        ["Tutorial1"] = new[] {100f,100f,100f}
+        ["Tutorial1"] = new[] {100f,100f,100f},
+        ["Tutorial2"] = new[] {11f,14.25f,17.5f},
+        ["Tutorial3"] = new[] {8f,14f,20f},
+        ["Tutorial4"] = new[] {4f,7.5f,11f},
+        ["Tutorial5"] = new[] {9f,15.75f,21f}
     };
 
     void Start()
