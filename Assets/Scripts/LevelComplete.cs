@@ -27,7 +27,7 @@ public class LevelComplete : MonoBehaviour
     {
         for(int i=0; i<=2; i++)
         {
-            gemTimes[i].text = getTimeFromFloat(levelTimes[levelName][0]);
+            gemTimes[i].text = getTimeFromFloat(levelTimes[levelName][i]);
         }
         StartCoroutine(FillGems(timeTaken));
         StartCoroutine(DisplayTime(timeTaken));
