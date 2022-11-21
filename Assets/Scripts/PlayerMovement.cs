@@ -311,7 +311,9 @@ public class PlayerMovement : MonoBehaviour
         {
             respawn.Play();
             transform.position = respawnPoint.position;
-            playerCam.rotation = respawnPoint.rotation;
+            playerCam.transform.rotation = respawnPoint.rotation;
+            orientation.transform.rotation = respawnPoint.rotation;
+
             rb.velocity = new Vector3(0,0,0);
         }
         if  (other.gameObject.CompareTag("Rewind"))
