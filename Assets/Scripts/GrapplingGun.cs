@@ -19,6 +19,9 @@ public class GrapplingGun : MonoBehaviour
     private RaycastHit hit;
     private List<GameObject> crosshairTips;
 
+    public AudioSource grappleFire;
+
+    public AudioSource grappleReel;
     private enum crosshairState
     {
         cannotGrapple,
@@ -60,19 +63,27 @@ public class GrapplingGun : MonoBehaviour
 
         if(!isReeling)
         {
-            playerRb.AddForce(Vector3.down * reelAccel);    
+            playerRb.AddForce(Vector3.down * reelAccel);
+            grappleReel.Stop();    
         }
         if(IsGrappling() && isReeling)
         {
             Vector3 direction = (grapplePoint - player.transform.position).normalized;
             playerRb.AddForce(direction * reelAccel * 2);
             SetCrosshair(crosshairState.isReeling);
+            if(!grappleReel.isPlaying)
+            {
+                grappleReel.Play();
+            }
+            
         }
         // TODO: Possible refactor using input system onPress?
         // Grapple
         if (Input.GetMouseButtonDown(0))
         {
             StartGrapple();
+            
+
         }
         else if (Input.GetMouseButtonUp(0))
         {
@@ -130,6 +141,7 @@ public class GrapplingGun : MonoBehaviour
     {
         if (canGrapple)
         {
+            grappleFire.Play();
             grapplePoint = hit.point;
             lr.positionCount = 2;
             currentGrapplePosition = gunTip.position;

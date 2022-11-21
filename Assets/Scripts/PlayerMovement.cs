@@ -48,6 +48,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 normalVector = Vector3.up;
     private Vector3 wallNormalVector;
 
+    public AudioSource pickupSound;
+    public AudioSource respawn;
+    public AudioSource finishLevel;
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -296,16 +299,19 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Finish")) 
         {
+            finishLevel.Play();
             //END LEVEL SEQUENCE
         }
         if (other.gameObject.CompareTag("Respawn"))
         {
+            respawn.Play();
             transform.position = respawnPoint.position;
             rb.velocity = new Vector3(0,0,0);
         }
         if  (other.gameObject.CompareTag("Rewind"))
         {
             //TIME REDUCTION HERE
+            pickupSound.Play();
             Destroy(other.gameObject);
         }
     }
