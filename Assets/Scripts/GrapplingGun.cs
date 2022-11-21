@@ -73,7 +73,12 @@ public class GrapplingGun : MonoBehaviour
             SetCrosshair(crosshairState.isReeling);
             if(!grappleReel.isPlaying)
             {
+                grappleReel.time = 0.25f;
                 grappleReel.Play();
+            }
+            if(grappleReel.isPlaying && grappleReel.time > 2.5f)
+            {
+                grappleReel.time = 0.3f;
             }
             
         }
