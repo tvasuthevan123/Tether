@@ -88,7 +88,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Boolean_35A71344: 0
+    - Boolean_35A71344: 1
     - Boolean_7A5F3F39: 1
     - Boolean_7AC8D832: 1
     - Vector1_3402D67A: 1.64

@@ -303,6 +303,10 @@ public class PlayerMovement : MonoBehaviour
             transform.position = respawnPoint.position;
             rb.velocity = new Vector3(0,0,0);
         }
+        if  (other.gameObject.CompareTag("Rewind"))
+        {
+            //TIME REDUCTION HERE
+        }
     }
     private void StopGrounded()
     {

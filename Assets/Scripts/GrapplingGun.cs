@@ -58,7 +58,11 @@ public class GrapplingGun : MonoBehaviour
             SetCrosshair(crosshairState.isGrappling);
         }
 
-
+        if(!IsGrappling() && !isReeling)
+        {
+            playerRb.drag = 0;
+            playerRb.AddForce(Vector3.down * reelAccel);
+        }
         if(IsGrappling() && isReeling)
         {
             Vector3 direction = (grapplePoint - player.transform.position).normalized;
