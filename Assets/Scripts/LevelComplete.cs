@@ -7,7 +7,7 @@ public class LevelComplete : MonoBehaviour
 {
     public Material redGemMat;
     public static float timeTaken;
-    public TMP_Text timeDisplay;
+    public TMP_Text timeDisplay, oneGemTime, twoGemTime, threeGemTime;
     public static string levelName;
     public static string nextLevel;
     public SceneFader sceneFader;
@@ -15,11 +15,14 @@ public class LevelComplete : MonoBehaviour
     public GameObject gem1, gem2, gem3;
 
     private static Dictionary<string, float[]> levelTimes = new Dictionary<string, float[]>{
-        ["Tutorial1"] = new[] {9999f,9999f,9999f}
+        ["Tutorial1"] = new[] {100f,100f,100f}
     };
 
     void Start()
     {
+        oneGemTime.text = getTimeFromFloat(levelTimes[levelName][0]);
+        twoGemTime.text = getTimeFromFloat(levelTimes[levelName][1]);
+        threeGemTime.text = getTimeFromFloat(levelTimes[levelName][2]);
         StartCoroutine(FillGems(timeTaken));
         StartCoroutine(DisplayTime(timeTaken));
     }
@@ -65,11 +68,16 @@ public class LevelComplete : MonoBehaviour
         {
             time+=Time.deltaTime;
             float timeToDisplay = Mathf.Lerp(0, timeTaken, time/2);
-            float minutes = Mathf.FloorToInt(timeToDisplay/60);
-            float seconds = Mathf.FloorToInt(timeToDisplay%60);
-            float milliseconds = timeToDisplay % 1 * 1000;
-            timeDisplay.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
+            timeDisplay.text = getTimeFromFloat(timeToDisplay);
             yield return 0;
         }
+    }
+
+    string getTimeFromFloat(float time)
+    {
+        float minutes = Mathf.FloorToInt(time/60);
+        float seconds = Mathf.FloorToInt(time%60);
+        float milliseconds = time % 1 * 1000;
+        return string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
     }
 }
