@@ -46,7 +46,7 @@ public class LevelComplete : MonoBehaviour
     {
         float[] times = levelTimes[levelName];
         Material[] mats = {redGemMat};
-        for(int i=2; i>=0; i++)
+        for(int i=2; i>=0; i--)
         {
             if(timeTaken<times[i])
             {

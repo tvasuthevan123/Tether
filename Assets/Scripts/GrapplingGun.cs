@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GrapplingGun : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class GrapplingGun : MonoBehaviour
     public AudioSource grappleFire;
 
     public AudioSource grappleReel;
+    public bool isTooltipEnabled;
+    public TMP_Text[] tooltips;
+    private int activeTooltip=0;
+    private bool attemptedInvalidGrapple=false;
     private enum crosshairState
     {
         cannotGrapple,
@@ -41,6 +46,7 @@ public class GrapplingGun : MonoBehaviour
         {
             crosshairTips.Add(crosshairTipTransform.gameObject);
         }
+        Debug.Log(crosshairTips);
     }
 
     void Update()
@@ -84,8 +90,7 @@ public class GrapplingGun : MonoBehaviour
             }
             
         }
-        // TODO: Possible refactor using input system onPress?
-        // Grapple
+
         if (Input.GetMouseButtonDown(0))
         {
             StartGrapple();
@@ -137,6 +142,30 @@ public class GrapplingGun : MonoBehaviour
         {
             crosshairTip.GetComponent<Image>().color = crosshairColor;
         }
+
+        if(isTooltipEnabled)
+        {
+            tooltips[activeTooltip].gameObject.SetActive(false);
+            int tooltipId = 0;
+            if(attemptedInvalidGrapple)
+                tooltipId=4;
+            switch(state)
+            {
+                case crosshairState.canGrapple:
+                    tooltipId=1;
+                    attemptedInvalidGrapple=false;
+                    break;
+                case crosshairState.isGrappling:
+                    tooltipId=2;
+                    attemptedInvalidGrapple=false;
+                    break;
+                case crosshairState.isReeling:
+                    tooltipId=3;
+                    break;
+            }
+            tooltips[tooltipId].gameObject.SetActive(true);
+            activeTooltip = tooltipId;
+        }
     }
 
     /// <summary>
@@ -155,7 +184,10 @@ public class GrapplingGun : MonoBehaviour
             //     setFixedGrapple();
         }
         else {
-            //TODO Flash for no grapple
+            tooltips[activeTooltip].gameObject.SetActive(false);
+            tooltips[4].gameObject.SetActive(true);
+            activeTooltip=4;
+            attemptedInvalidGrapple=true;
         }
     }
 
