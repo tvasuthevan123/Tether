@@ -56,7 +56,6 @@ public class PlayerMovement : MonoBehaviour
         playerCam.transform.rotation = respawnPoint.rotation;
         orientation.transform.rotation = respawnPoint.rotation;
         GameObject.FindGameObjectWithTag("Music").GetComponent<MusicClass>().LSStopMusic();
-        Time.timeScale = 1f;
     }
 
 
