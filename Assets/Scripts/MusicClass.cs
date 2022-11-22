@@ -4,22 +4,32 @@ using UnityEngine;
 
 public class MusicClass : MonoBehaviour
 {
-    private AudioSource audioSource;
+    public AudioSource IGM;
+    public AudioSource LevelSelect;
 
     private void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
-        audioSource = GetComponent<AudioSource>();
+    
     }
     
-    public void PlayMusic()
+    public void IGMPlayMusic()
     {
-        if(audioSource.isPlaying) return;
-        audioSource.Play();
+        if(LevelSelect.isPlaying || IGM.isPlaying) return;
+        IGM.Play();
     }
 
-    public void StopMusic()
+    public void IGMStopMusic()
     {
-        audioSource.Stop();
+        IGM.Stop();
+    }
+    public void LSPlayMusic()
+    {
+        if(LevelSelect.isPlaying || IGM.isPlaying) return;
+        LevelSelect.Play();
+    }
+
+    public void LSStopMusic()
+    {
+        LevelSelect.Stop();
     }
 }

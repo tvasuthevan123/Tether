@@ -8,5 +8,7 @@ public class LevelSelector : MonoBehaviour
     {
         Debug.Log("Moving to " + LevelName);
         fader.FadeTo(LevelName);
+        GameObject.FindGameObjectWithTag("Music").GetComponent<MusicClass>().IGMStopMusic();
+        GameObject.FindGameObjectWithTag("Music").GetComponent<MusicClass>().LSPlayMusic();
     }
 }

@@ -54,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
         Cursor.visible = false;
         playerCam.transform.rotation = respawnPoint.rotation;
         orientation.transform.rotation = respawnPoint.rotation;
+        GameObject.FindGameObjectWithTag("Music").GetComponent<MusicClass>().LSStopMusic();
     }
 
 
@@ -70,7 +71,8 @@ public class PlayerMovement : MonoBehaviour
             return;
         MyInput();
         Look();
-        GameObject.FindGameObjectWithTag("Music").GetComponent<MusicClass>().PlayMusic();
+        GameObject.FindGameObjectWithTag("Music").GetComponent<MusicClass>().IGMPlayMusic();
+        
     }
 
 
