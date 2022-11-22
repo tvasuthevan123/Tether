@@ -183,7 +183,7 @@ public class GrapplingGun : MonoBehaviour
             // if(!isReeling)
             //     setFixedGrapple();
         }
-        else {
+        else if(isTooltipEnabled){
             tooltips[activeTooltip].gameObject.SetActive(false);
             tooltips[4].gameObject.SetActive(true);
             activeTooltip=4;
