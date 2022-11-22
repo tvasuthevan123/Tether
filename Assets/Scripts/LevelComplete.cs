@@ -26,6 +26,7 @@ public class LevelComplete : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
         for(int i=0; i<=2; i++)
         {
             gemTimes[i].text = getTimeFromFloat(levelTimes[levelName][i]);
