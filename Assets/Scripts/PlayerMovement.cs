@@ -143,8 +143,8 @@ public class PlayerMovement : MonoBehaviour
             LevelComplete.nextLevel = nextLevel;
             LevelComplete.timeTaken = timer.timeElapsed;
             sceneFader.FadeTo("LevelComplete");
-            Debug.Log("Unlocking level: " + Mathf.Max(SceneManager.GetActiveScene().buildIndex+1, PlayerPrefs.GetInt("levelReached", 1)));
-            PlayerPrefs.SetInt("levelReached", Mathf.Max(SceneManager.GetActiveScene().buildIndex+1, PlayerPrefs.GetInt("levelReached", 1)));
+            Debug.Log("Unlocking level: " + Mathf.Max(SceneManager.GetActiveScene().buildIndex, PlayerPrefs.GetInt("levelReached", 1)));
+            PlayerPrefs.SetInt("levelReached", Mathf.Max(SceneManager.GetActiveScene().buildIndex, PlayerPrefs.GetInt("levelReached", 1)));
         }
         if (other.gameObject.CompareTag("Respawn"))
         {
