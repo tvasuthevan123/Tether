@@ -613,7 +613,7 @@ MonoBehaviour:
   helpText: {fileID: 0}
   sceneFader: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: 3a6fdea718fcd8849a8b3c130fddd1cf, type: 2}
-  grapplingGun: {fileID: 0}
+  grapplingGun: {fileID: 4480159138405865081}
 --- !u!1 &2091191022677212051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,7 +1049,7 @@ MonoBehaviour:
   sceneFader: {fileID: 0}
   levelName: 
   nextLevel: 
-  grappleGun: {fileID: 8325324577667515136}
+  grappleGun: {fileID: 0}
 --- !u!54 &3613312642453303235
 Rigidbody:
   m_ObjectHideFlags: 0
