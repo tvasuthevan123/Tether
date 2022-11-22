@@ -2,16 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using TMPro;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool isGamePaused = false;
     public GameObject pauseMenuUI;
     public GameObject playerUI;
+    public TMP_Text helpText;
 
     public SceneFader sceneFader;
 
     public AudioMixer audioMixer;
+    public GrapplingGun grapplingGun;
+
+    void Start()
+    {
+        if(grapplingGun.isTooltipEnabled)
+        {
+            helpText.text = "HELP TEXT : ENABLED";
+            helpText.color = Color.red;
+        }
+        else
+        {
+            helpText.text = "HELP TEXT : DISABLED";
+            helpText.color = Color.green;
+        }
+    }
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -63,5 +80,19 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Quitting game...");
         Application.Quit();
+    }
+
+    void toggleCrosshairHelp()
+    {
+        if(grapplingGun.isTooltipEnabled)
+        {
+            helpText.text = "HELP TEXT : DISABLED";
+            helpText.color = Color.red;
+        }
+        else
+        {
+            helpText.text = "HELP TEXT : ENABLED";
+            helpText.color = Color.green;
+        }
     }
 }

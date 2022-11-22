@@ -141,8 +141,7 @@ public class PlayerMovement : MonoBehaviour
             LevelComplete.nextLevel = nextLevel;
             LevelComplete.timeTaken = timer.timeElapsed;
             sceneFader.FadeTo("LevelComplete");
-            //END LEVEL SEQUENCE
-            // Level Complete Overlay
+            PlayerPrefs.SetInt("levelReached", PlayerPrefs.GetInt("levelReached",1)+1);
         }
         if (other.gameObject.CompareTag("Respawn"))
         {
