@@ -1049,7 +1049,7 @@ MonoBehaviour:
   sceneFader: {fileID: 0}
   levelName: 
   nextLevel: 
-  grappleGun: {fileID: 0}
+  grappleGun: {fileID: 8325324577667515136}
 --- !u!54 &3613312642453303235
 Rigidbody:
   m_ObjectHideFlags: 0
