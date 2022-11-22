@@ -503,7 +503,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-71678
+  m_Name: pb_Mesh-127186
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1404,7 +1404,7 @@ PrefabInstance:
     - target: {fileID: 4535282060751316046, guid: 69fa5bb665b1b6a46a1ac73211734c68,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 72
+      value: 114
       objectReference: {fileID: 0}
     - target: {fileID: 4596446972692849623, guid: 69fa5bb665b1b6a46a1ac73211734c68,
         type: 3}
@@ -1415,6 +1415,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontColor.b
       value: 0.94509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255164256600961795, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255164256600961795, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255164256600961795, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6032277215368886876, guid: 69fa5bb665b1b6a46a1ac73211734c68,
         type: 3}
@@ -1436,6 +1451,16 @@ PrefabInstance:
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 1089196866}
+    - target: {fileID: 6608929327182728676, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608929327182728676, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7520208674608443317, guid: 69fa5bb665b1b6a46a1ac73211734c68,
         type: 3}
       propertyPath: m_IsActive
