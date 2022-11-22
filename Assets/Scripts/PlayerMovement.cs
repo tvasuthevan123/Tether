@@ -55,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
         playerCam.transform.rotation = respawnPoint.rotation;
         orientation.transform.rotation = respawnPoint.rotation;
         GameObject.FindGameObjectWithTag("Music").GetComponent<MusicClass>().LSStopMusic();
+        Time.timeScale = 1f;
     }
 
 
@@ -152,9 +153,9 @@ public class PlayerMovement : MonoBehaviour
             orientation.transform.rotation = respawnPoint.rotation;
             grappleGun.StopReel();
             grappleGun.StopGrapple();
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+            rb.constraints = RigidbodyConstraints.FreezeRotation;
             
-
-            rb.velocity = new Vector3(0,0,0);
         }
         if  (other.gameObject.CompareTag("Rewind"))
         {
@@ -162,6 +163,7 @@ public class PlayerMovement : MonoBehaviour
             pickupSound.Play();
             timer.ReduceTime(5f);
             Destroy(other.gameObject);
+            
         }
     }
     
