@@ -21,12 +21,12 @@ public class PauseMenu : MonoBehaviour
         if(grapplingGun.isTooltipEnabled)
         {
             helpText.text = "HELP TEXT : ENABLED";
-            helpText.color = Color.red;
+            helpText.color = new Color(125,226,110);
         }
         else
         {
             helpText.text = "HELP TEXT : DISABLED";
-            helpText.color = Color.green;
+            helpText.color = new Color(193,41,61);
         }
     }
     void Update()
@@ -48,7 +48,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         playerUI.SetActive(false);
         Time.timeScale = 0f;
-        Debug.Log("Paused");
     }
     
     public void Resume()
@@ -56,7 +55,6 @@ public class PauseMenu : MonoBehaviour
         isGamePaused = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        Debug.Log("Resuming?");
         pauseMenuUI.SetActive(false);
         playerUI.SetActive(true);
         Time.timeScale=1f;
@@ -82,17 +80,19 @@ public class PauseMenu : MonoBehaviour
         Application.Quit();
     }
 
-    void toggleCrosshairHelp()
+    public void toggleCrosshairHelp()
     {
         if(grapplingGun.isTooltipEnabled)
         {
+            helpText.color = new Color(193,41,61);
             helpText.text = "HELP TEXT : DISABLED";
-            helpText.color = Color.red;
+            grapplingGun.isTooltipEnabled = false;
         }
         else
         {
+            helpText.color = new Color(125,226,110);
             helpText.text = "HELP TEXT : ENABLED";
-            helpText.color = Color.green;
+            grapplingGun.isTooltipEnabled = true;
         }
     }
 }
