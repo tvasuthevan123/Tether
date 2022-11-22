@@ -70,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         MyInput();
         Look();
+        GameObject.FindGameObjectWithTag("Music").GetComponent<MusicClass>().PlayMusic();
     }
 
 
