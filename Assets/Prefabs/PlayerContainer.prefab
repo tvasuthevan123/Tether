@@ -334,7 +334,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1190532842557908133}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -488,7 +488,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Left click to create grapple
+  m_text: Left click here to grapple!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4e8a9a7246fb3bb4c9e8a68c258dc3fb, type: 2}
   m_sharedMaterial: {fileID: -7992419939298714918, guid: 4e8a9a7246fb3bb4c9e8a68c258dc3fb,
@@ -498,7 +498,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190335
+    rgba: 4292804352
   m_fontColor: {r: 0, g: 1, b: 0.8694532, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -928,7 +928,7 @@ RectTransform:
   - {fileID: 7892260673734659011}
   - {fileID: 9024122598908068273}
   m_Father: {fileID: 4949904840195568399}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1620,7 +1620,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.31811523, y: -192.64679}
+  m_AnchoredPosition: {x: 0.0000050664, y: -190.7}
   m_SizeDelta: {x: 252.1381, y: 21.655}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8983007713760965752
@@ -1651,7 +1651,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GRAPPLING - RIGHT CLICK TO REEL IN
+  m_text: Reeling! Let go when you think you can reach your next point!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4e8a9a7246fb3bb4c9e8a68c258dc3fb, type: 2}
   m_sharedMaterial: {fileID: -7992419939298714918, guid: 4e8a9a7246fb3bb4c9e8a68c258dc3fb,
@@ -1661,8 +1661,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255360
-  m_fontColor: {r: 0, g: 1, b: 0, a: 1}
+    rgba: 4278809558
+  m_fontColor: {r: 0.8396226, g: 0.45182136, b: 0.03564434, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2161,7 +2161,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1190532842557908133}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: LoadLevelSelect
         m_Mode: 1
@@ -2537,7 +2537,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.31811523, y: -192.64679}
+  m_AnchoredPosition: {x: 0.0000050664, y: -188.7}
   m_SizeDelta: {x: 252.1381, y: 21.655}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1367826863298662003
@@ -2671,7 +2671,7 @@ RectTransform:
   - {fileID: 7597427244912264470}
   - {fileID: 3452096240446802894}
   m_Father: {fileID: 4949904840195568399}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2713,7 +2713,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -239.33078, y: 139.7}
+  m_AnchoredPosition: {x: -243.8, y: 195.6}
   m_SizeDelta: {x: 143.3384, y: 30.5577}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8588640374304935046
@@ -2956,7 +2956,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GRAPPLING - RIGHT CLICK TO REEL IN
+  m_text: Grappling! Right click to reel in!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4e8a9a7246fb3bb4c9e8a68c258dc3fb, type: 2}
   m_sharedMaterial: {fileID: -7992419939298714918, guid: 4e8a9a7246fb3bb4c9e8a68c258dc3fb,
@@ -3085,6 +3085,7 @@ RectTransform:
   m_LocalScale: {x: 2.4, y: 2.4, z: 2.4}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 7204281428516434493}
   - {fileID: 3366412290498766710}
   - {fileID: 7445302699234617301}
   - {fileID: 6867825892324415255}
@@ -3395,13 +3396,13 @@ RectTransform:
   - {fileID: 4429079972761880214}
   - {fileID: 5355199197955599057}
   m_Father: {fileID: 4949904840195568399}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.4, y: 58.1}
+  m_AnchoredPosition: {x: 7.4615, y: -58.863}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5746152, y: -0.08862972}
 --- !u!114 &8068088520070733225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3615,6 +3616,82 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7112994478451799912}
+--- !u!1 &8202304399629591888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7204281428516434493}
+  - component: {fileID: 4805190293070347068}
+  - component: {fileID: 7362833479489726312}
+  m_Layer: 5
+  m_Name: TooltipPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7204281428516434493
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8202304399629591888}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4949904840195568399}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.000034332275, y: -192.85718}
+  m_SizeDelta: {x: 155.8155, y: -43.4443}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &4805190293070347068
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8202304399629591888}
+  m_CullTransparentMesh: 1
+--- !u!114 &7362833479489726312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8202304399629591888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.92941177}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8898075143657295827
 GameObject:
   m_ObjectHideFlags: 0
@@ -3692,7 +3769,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -352.5, y: 139.69885}
+  m_AnchoredPosition: {x: -356.9692, y: 195.59883}
   m_SizeDelta: {x: 60, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &30157603632933825
@@ -3751,7 +3828,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19
+  m_fontSize: 18.75
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3787,7 +3864,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -0.88623047, w: 0.00013542175}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3884,7 +3961,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1190532842557908133}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: SetVolume
         m_Mode: 0
@@ -4318,7 +4395,13 @@ MonoBehaviour:
   grappleFire: {fileID: 665705611368746459}
   grappleReel: {fileID: 7803131767583729470}
   isTooltipEnabled: 0
-  tooltips: []
+  tooltips:
+  - {fileID: 3320658380110171388}
+  - {fileID: 8663894354202276028}
+  - {fileID: 4596446972692849623}
+  - {fileID: 4082900755021082058}
+  - {fileID: 1073186413465372695}
+  tooltipBackpanel: {fileID: 8202304399629591888}
 --- !u!4 &8996341729958295965 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5598151357720024938, guid: 2225794a229810845bc434c1c010c842,
