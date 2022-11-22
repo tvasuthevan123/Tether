@@ -156,7 +156,9 @@ public class PlayerMovement : MonoBehaviour
             grappleGun.StopGrapple();
             
 
-            rb.velocity = new Vector3(0,0,0);
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+            rb.constraints = RigidbodyConstraints.FreezeRotation;
+
         }
         if  (other.gameObject.CompareTag("Rewind"))
         {
