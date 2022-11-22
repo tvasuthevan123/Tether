@@ -1284,6 +1284,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1190532842557908133, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+        type: 3}
+      propertyPath: sceneFader
+      value: 
+      objectReference: {fileID: 294536128}
     - target: {fileID: 3669257436208236310, guid: 69fa5bb665b1b6a46a1ac73211734c68,
         type: 3}
       propertyPath: m_Mesh
