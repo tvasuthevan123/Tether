@@ -24,4 +24,9 @@ public class LevelSelector : MonoBehaviour
         GameObject.FindGameObjectWithTag("Music").GetComponent<MusicClass>().IGMStopMusic();
         GameObject.FindGameObjectWithTag("Music").GetComponent<MusicClass>().LSPlayMusic();
     }
+
+    public void Home()
+    {
+        fader.FadeTo("Home");
+    }
 }
