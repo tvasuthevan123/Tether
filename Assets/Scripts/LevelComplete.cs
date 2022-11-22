@@ -6,11 +6,11 @@ using TMPro;
 public class LevelComplete : MonoBehaviour
 {
     public Material redGemMat;
-    public static float timeTaken;
+    public static float timeTaken = 10f;
     public TMP_Text timeDisplay;
     public TMP_Text[] gemTimes;
-    public static string levelName;
-    public static string nextLevel;
+    public static string levelName = "Tutorial1";
+    public static string nextLevel = "Tutorial2";
     public SceneFader sceneFader;
 
     public GameObject[] gems;
@@ -25,6 +25,7 @@ public class LevelComplete : MonoBehaviour
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Confined;
         for(int i=0; i<=2; i++)
         {
             gemTimes[i].text = getTimeFromFloat(levelTimes[levelName][i]);
@@ -78,5 +79,19 @@ public class LevelComplete : MonoBehaviour
         float seconds = Mathf.FloorToInt(time%60);
         float milliseconds = time % 1 * 1000;
         return string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
+    }
+
+    public void LoadLevelSelect()
+    {
+        sceneFader.FadeTo("LevelSelect");
+    }
+    public void RestartLevel()
+    {
+        sceneFader.FadeTo(levelName);
+    } 
+
+    public void LoadNextLevel()
+    {
+        sceneFader.FadeTo(nextLevel);
     }
 }
