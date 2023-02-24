@@ -25,7 +25,6 @@ public class GrapplingGun : MonoBehaviour
     public AudioSource grappleReel;
     public bool isTooltipEnabled;
     public TMP_Text[] tooltips;
-    public GameObject tooltipBackpanel;
     private int activeTooltip=0;
     private bool attemptedInvalidGrapple=false;
     private enum crosshairState
@@ -54,16 +53,6 @@ public class GrapplingGun : MonoBehaviour
     {
         if(PauseMenu.isGamePaused)
             return;
-        if(!isTooltipEnabled)
-        {
-            tooltips[activeTooltip].gameObject.SetActive(false);
-            tooltipBackpanel.SetActive(false);
-        }
-        else
-        {
-            tooltipBackpanel.SetActive(true);
-        }   
-
         bool canGrappleCheck = Physics.Raycast(cameraobject.position, cameraobject.forward, out hit, maxDistance, whatIsGrappleable);
         if(canGrappleCheck && !IsGrappling())
         {

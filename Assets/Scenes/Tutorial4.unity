@@ -213,6 +213,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7266bcd41dccd3947a7c0834cf0d74c2, type: 3}
+--- !u!114 &121016293 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2605436665311542678, guid: 69fa5bb665b1b6a46a1ac73211734c68,
+    type: 3}
+  m_PrefabInstance: {fileID: 1355727116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b58753ffaf07ad45977276bbe613e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &243570421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8320,11 +8332,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1190532842557908133, guid: 69fa5bb665b1b6a46a1ac73211734c68,
-        type: 3}
-      propertyPath: sceneFader
-      value: 
-      objectReference: {fileID: 962224919}
     - target: {fileID: 1507880739707487896, guid: 69fa5bb665b1b6a46a1ac73211734c68,
         type: 3}
       propertyPath: grappling
@@ -8489,7 +8496,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 121016293}
     - target: {fileID: 6322397297162162285, guid: 69fa5bb665b1b6a46a1ac73211734c68,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
